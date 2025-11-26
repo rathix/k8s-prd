@@ -24,6 +24,16 @@ ingressRoute:
 providers:
   kubernetesGateway:
     enabled: true
+  kubernetesCRD:
+    allowCrossNamespace: true
+    allowExternalNameServices: true
+  kubernetesIngress:
+    enabled: true
+    allowExternalNameServices: true
+    publishedService:
+      enabled: true
+    ingressEndpoint:
+      ip: "127.0.0.1"
 
 gateway:
   listeners:
@@ -58,3 +68,6 @@ accessLog:
 tracing:
   otlp:
     enabled: false
+
+additionalArguments:
+  - "--providers.kubernetesingress.ingressendpoint.ip=127.0.0.1"
