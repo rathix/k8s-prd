@@ -22,6 +22,12 @@ spec:
       path: argocd
     - repoURL: https://github.com/rathix/k8s-prd.git
       targetRevision: HEAD
+      path: cert-manager
+    - repoURL: https://github.com/rathix/k8s-prd.git
+      targetRevision: HEAD
+      path: longhorn
+    - repoURL: https://github.com/rathix/k8s-prd.git
+      targetRevision: HEAD
       path: traefik
     - repoURL: https://github.com/rathix/k8s-prd.git
       targetRevision: HEAD

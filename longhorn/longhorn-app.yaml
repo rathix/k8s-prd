@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: longhorn
+  namespace: argocd
+spec:
+  project: default
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: longhorn-system
+  sources:
+    - repoURL: https://github.com/rathix/k8s-prd.git
+      targetRevision: HEAD
+      path: longhorn/manifests
+    - repoURL: https://charts.longhorn.io
+      chart: longhorn
+      targetRevision: 1.10.1
+      helm:
+        releaseName: longhorn
