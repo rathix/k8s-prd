@@ -24,7 +24,9 @@ spec:
       targetRevision: v1.19.1
       helm:
         releaseName: cert-manager
-        valuesObject: crds.enabled=true
+        valuesObject:
+          crds:
+            enabled: true
     - repoURL: https://vadimkim.github.io/cert-manager-webhook-hetzner
       chart: cert-manager-webhook-hetzner
       targetRevision: v1.4.0
