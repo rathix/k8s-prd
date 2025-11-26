@@ -6,7 +6,8 @@ metadata:
 spec:
   project: default
   syncPolicy:
-    automated: {}
+    automated:
+      enabled: true
   source:
     chart: servarr
     repoURL: https://charts.kubito.dev
