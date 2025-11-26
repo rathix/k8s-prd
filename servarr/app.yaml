@@ -8,7 +8,7 @@ spec:
   source:
     chart: servarr
     repoURL: https://charts.kubito.dev
-    targetRevision: servarr-1.2.2
+    targetRevision: 1.2.2
     destination:
       server: "https://kubernetes.default.svc"
       namespace: servarr
