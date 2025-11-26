@@ -35,3 +35,6 @@ spec:
     - repoURL: https://github.com/rathix/k8s-prd.git
       targetRevision: HEAD
       path: servarr
+    - repoURL: https://github.com/rathix/k8s-prd.git
+      targetRevision: HEAD
+      path: pihole
