@@ -19,7 +19,7 @@ spec:
     - repoURL: https://github.com/rathix/k8s-prd.git
       targetRevision: HEAD
       path: cert-manager/manifests
-    - repoURL: quay.io/jetstack/charts/cert-manager
+    - repoURL: quay.io/jetstack/charts
       chart: cert-manager
       targetRevision: v1.19.1
       helm:
