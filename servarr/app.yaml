@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     chart: kubitodev/servarr
-    repoURL: https://https://charts.kubito.dev
+    repoURL: https://charts.kubito.dev
     targetRevision: 1.2.2
     destination:
       server: "https://kubernetes.default.svc"
