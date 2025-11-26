@@ -8,6 +8,8 @@ spec:
   syncPolicy:
     automated:
       enabled: true
+      prune: true
+      selfHeal: true
   sources:
     - repoURL: https://github.com/rathix/k8s-prd.git
       targetRevision: HEAD
