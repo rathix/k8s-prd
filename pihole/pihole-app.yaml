@@ -27,3 +27,4 @@ spec:
 
           ingress:
             enabled: true
+            hosts: ["pihole.kennyandries.com"]
