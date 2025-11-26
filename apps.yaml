@@ -19,6 +19,9 @@ spec:
       path: kube-vip
     - repoURL: https://github.com/rathix/k8s-prd.git
       targetRevision: HEAD
+      path: argocd
+    - repoURL: https://github.com/rathix/k8s-prd.git
+      targetRevision: HEAD
       path: traefik
     - repoURL: https://github.com/rathix/k8s-prd.git
       targetRevision: HEAD
