@@ -1,0 +1,175 @@
+jellyfin:
+  enabled: true
+  ingress:
+    enabled: true
+    hosts: ["jellyfin.kennyandries.com"]
+
+  persistence:
+    config:
+      enabled: true
+      storageClass: longhorn
+      existingClaim: servarr-jellyfin-config
+    media:
+      enabled: true
+      existingClaim: servarr-jellyfin-media
+
+  # resources:
+  #   requests:
+  #     gpu.intel.com/i915: "1"
+  #   limits:
+  #     gpu.intel.com/i915: "1"
+
+  # extraVolumes:
+  # - name: dri
+  #   hostPath:
+  #     path: /dev/dri/
+  # extraVolumeMounts:
+  # - name: dri
+  #   mountPath: /dev/dri/
+
+  # capabilities:
+  #   add:
+  #     - "SYS_ADMIN"
+  #   drop:
+  #     - "ALL"
+
+  # podSecurityContext:
+  #   supplementalGroups:
+  #     - 109
+
+sonarr:
+  enabled: true
+  ingress:
+    enabled: true
+    hosts:
+      - host: sonarr.kennyandries.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    annotations:
+      traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+
+  persistence:
+    enabled: true
+    storageClass: longhorn
+    existingClaim: servarr-sonarr
+
+qbittorrent:
+  enabled: true
+  ingress:
+    enabled: true
+    hosts:
+      - host: qbittorrent.kennyandries.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    annotations:
+      traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+
+  persistence:
+    enabled: true
+    storageClass: longhorn
+    existingClaim: servarr-qbittorrent
+
+prowlarr:
+  enabled: true
+  ingress:
+    enabled: true
+    hosts:
+      - host: prowlarr.kennyandries.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    annotations:
+      traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+
+  persistence:
+    enabled: true
+    storageClass: longhorn
+    existingClaim: servarr-prowlarr
+
+flaresolverr:
+  enabled: true
+
+jellyseerr:
+  enabled: true
+  ingress:
+    enabled: true
+    hosts:
+      - host: jellyseerr.kennyandries.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+
+  persistence:
+    enabled: true
+    storageClass: longhorn
+    existingClaim: servarr-jellyseerr
+
+bazarr:
+  enabled: true
+  ingress:
+    enabled: true
+    hosts:
+      - host: bazarr.kennyandries.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    annotations:
+      traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+
+  persistence:
+    enabled: true
+    storageClass: longhorn
+    # existingClaim: servarr-bazarr
+
+radarr:
+  enabled: true
+  ingress:
+    enabled: true
+    hosts:
+      - host: radarr.kennyandries.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    annotations:
+      traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+
+  persistence:
+    enabled: true
+    storageClass: longhorn
+    existingClaim: servarr-radarr
+
+lidarr:
+  enabled: true
+  ingress:
+    enabled: true
+    hosts:
+      - host: lidarr.kennyandries.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    annotations:
+      traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+
+  persistence:
+    enabled: true
+    storageClass: longhorn
+    existingClaim: servarr-lidarr
+
+cleanuparr:
+  enabled: true
+  ingress:
+    enabled: true
+    hosts:
+      - host: cleanuparr.kennyandries.com
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    annotations:
+      traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+
+  persistence:
+    enabled: true
+    storageClass: longhorn
+    existingClaim: servarr-cleanuparr
