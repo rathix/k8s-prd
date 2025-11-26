@@ -13,30 +13,6 @@ jellyfin:
       enabled: true
       existingClaim: servarr-jellyfin-media
 
-  # resources:
-  #   requests:
-  #     gpu.intel.com/i915: "1"
-  #   limits:
-  #     gpu.intel.com/i915: "1"
-
-  # extraVolumes:
-  # - name: dri
-  #   hostPath:
-  #     path: /dev/dri/
-  # extraVolumeMounts:
-  # - name: dri
-  #   mountPath: /dev/dri/
-
-  # capabilities:
-  #   add:
-  #     - "SYS_ADMIN"
-  #   drop:
-  #     - "ALL"
-
-  # podSecurityContext:
-  #   supplementalGroups:
-  #     - 109
-
 sonarr:
   enabled: true
   ingress:
