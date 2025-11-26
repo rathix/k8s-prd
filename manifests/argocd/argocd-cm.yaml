@@ -22,3 +22,10 @@ data:
             hs.status = "Healthy"
           end
           return hs
+    Service:
+        health.lua: |
+          hs = {}
+          if obj.status ~= nil then
+            hs.status = "Healthy"
+          end
+          return hs
