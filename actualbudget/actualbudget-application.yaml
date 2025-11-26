@@ -1,0 +1,45 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: actualbudget
+  namespace: argocd
+spec:
+  project: default
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: actualbudget
+  sources:
+    - repoURL: https://github.com/rathix/k8s-prd.git
+      targetRevision: HEAD
+      path: actualbudget/manifests
+    - repoURL: https://community-charts.github.io/helm-charts
+      chart: actualbudget
+      targetRevision: 1.8.4
+      helm:
+        releaseName: actualbudget
+        valuesObject:
+          strategy:
+            type: Recreate
+
+          files:
+            server: /data/server-files
+            user: /data/user-files
+
+          ingress:
+            enabled: true
+            hosts:
+              - host: actualbudget.kennyandries.com
+                paths:
+                  - path: /
+                    pathType: ImplementationSpecific
+
+          persistence:
+            enabled: true
+            existingClaim: actualbudget-volume
