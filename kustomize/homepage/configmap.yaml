@@ -1,0 +1,61 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage
+  namespace: homepage
+  labels:
+    app.kubernetes.io/name: homepage
+data:
+  kubernetes.yaml: |
+    mode: cluster
+  settings.yaml: |
+    providers:
+      longhorn:
+        url: http://longhorn-frontend:80
+  bookmarks.yaml: |
+    - Developer:
+        - Github:
+            - abbr: GH
+              href: https://github.com/
+  services.yaml: |
+    - Media:
+        - Jellyfin:
+            icon: jellyfin.png
+            href: https://jellyfin.kennyandries.com/
+            description: Media streaming
+            namespace: servarr
+            app: jellyfin
+        - Radarr:
+            icon: radarr.png
+            href: https://radarr.kennyandries.com/
+            description: Movie requesting
+            namespace: servarr
+            app: radarr
+        - Sonarr:
+            icon: sonarr.png
+            href: https://sonarr.kennyandries.com/
+            description: Series requesting
+            namespace: servarr
+            app: sonarr
+        - Lidarr:
+            icon: lidarr.png
+            href: https://lidarr.kennyandries.com/
+            description: Music requesting
+            namespace: servarr
+            app: lidarr
+  widgets.yaml: |
+    - kubernetes:
+        cluster:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
+          label: "cluster"
+        nodes:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
+    - search:
+        provider: duckduckgo
+        target: _blank

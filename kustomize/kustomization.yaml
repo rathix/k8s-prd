@@ -5,14 +5,26 @@ labels:
     pairs:
       app.kubernetes.io/managed-by: Kustomize
 resources:
+  # Kube-vip
   - kube-vip/rbac.yaml
   - kube-vip/daemonset.yaml
+  # Cert-manager
   - cert-manager/clusterissuer.yaml
   - cert-manager/sealedsecret.yaml
+  # Longhorn
   - longhorn/namespace.yaml
+  # Traefik
   - traefik/sealedsecret.yaml
   - traefik/middleware.yaml
   - traefik/certificate.yaml
+  # Servarr
   - servarr/namespace.yaml
   - servarr/persistentvolume.yaml
   - servarr/persistentvolumeclaim.yaml
+  # Homepage Dashboard
+  - homepage/namespace.yaml
+  - homepage/rbac.yaml
+  - homepage/configmap.yaml
+  - homepage/service.yaml
+  - homepage/deployment.yaml
+  - homepage/ingress.yaml

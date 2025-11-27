@@ -14,6 +14,8 @@ repositories:
     url: https://community-charts.github.io/helm-charts
   - name: servarr
     url: https://charts.kubito.dev
+  - name: metrics-server
+    url: https://kubernetes-sigs.github.io/metrics-server/
 
 releases:
   # Distributed storage
@@ -62,3 +64,10 @@ releases:
     version: v1.2.2
     values:
       - ./values/servarr-values.yaml
+  # Metrics gathering
+  - name: metrics-server
+    namespace: metrics-server
+    chart: metrics-server/metrics-server
+    version: v3.13.0
+    values:
+      - ./values/metrics-server-values.yaml
