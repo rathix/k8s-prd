@@ -11,7 +11,21 @@ data:
   settings.yaml: |
     providers:
       longhorn:
-        url: http://longhorn-frontend:80
+        url: http://longhorn-frontend.longhorn-system.svc.cluster.local:80
+
+    useEqualHeights: true
+
+    layout:
+      Media:
+        style: row
+        columns: 4
+      Services:
+        style: row
+        columns: 4
+      Cluster Management:
+        style: row
+        columns: 4
+
   bookmarks.yaml: |
     - Developer:
         - Github:
@@ -19,30 +33,77 @@ data:
               href: https://github.com/
   services.yaml: |
     - Media:
-        - Jellyfin:
-            icon: jellyfin.png
-            href: https://jellyfin.kennyandries.com/
-            description: Media streaming
-            namespace: servarr
-            app: jellyfin
-        - Radarr:
-            icon: radarr.png
-            href: https://radarr.kennyandries.com/
-            description: Movie requesting
-            namespace: servarr
-            app: radarr
-        - Sonarr:
-            icon: sonarr.png
-            href: https://sonarr.kennyandries.com/
-            description: Series requesting
-            namespace: servarr
-            app: sonarr
-        - Lidarr:
-            icon: lidarr.png
-            href: https://lidarr.kennyandries.com/
-            description: Music requesting
-            namespace: servarr
-            app: lidarr
+      - Jellyfin:
+          icon: jellyfin.png
+          href: https://jellyfin.kennyandries.com/
+          description: Media streaming
+          namespace: servarr
+          app: jellyfin
+      - Radarr:
+          icon: radarr.png
+          href: https://radarr.kennyandries.com/
+          description: Movie requesting
+          namespace: servarr
+          app: radarr
+      - Sonarr:
+          icon: sonarr.png
+          href: https://sonarr.kennyandries.com/
+          description: Series requesting
+          namespace: servarr
+          app: sonarr
+      - Lidarr:
+          icon: lidarr.png
+          href: https://lidarr.kennyandries.com/
+          description: Music requesting
+          namespace: servarr
+          app: lidarr
+      - Prowlarr:
+          icon: prowlarr.png
+          href: https://prowlarr.kennyandries.com/
+          description: Indexer management
+          namespace: servarr
+          app: prowlarr
+      - Jellyseerr:
+          icon: jellyseerr.png
+          href: https://jellyseerr.kennyandries.com/
+          description: Media requesting
+          namespace: servarr
+          app: jellyseerr
+      - Bazarr:
+          icon: bazarr.png
+          href: https://bazarr.kennyandries.com/
+          description: Subtitle management
+          namespace: servarr
+          app: bazarr
+      - Cleanuparr:
+          icon: cleanuperr.png
+          href: https://cleanuparr.kennyandries.com/
+          description: Media cleanup
+          namespace: servarr
+          app: cleanuparr
+
+    - Services:
+      - Actual Budget:
+          icon: actual-budget.png
+          href: https://actualbudget.kennyandries.com/
+          description: Personal finance
+          namespace: actualbudget
+          app: actualbudget
+
+    - Cluster Management:
+      - Traefik:
+          icon: traefik.png
+          href: https://traefik.kennyandries.com/
+          description: Ingress controller
+          namespace: traefik
+          app: traefik
+      - Longhorn:
+          icon: longhorn.png
+          href: https://longhorn.kennyandries.com/
+          description: Distributed block storage
+          namespace: longhorn-system
+          app: longhorn
+
   widgets.yaml: |
     - kubernetes:
         cluster:
@@ -59,3 +120,13 @@ data:
     - search:
         provider: duckduckgo
         target: _blank
+    - longhorn:
+        # Show the expanded view
+        expanded: true
+        # Shows a node representing the aggregate values
+        total: true
+        # Shows the node names as labels
+        labels: true
+        # Show the nodes
+        nodes: true
+  docker.yaml: ""
