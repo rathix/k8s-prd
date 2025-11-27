@@ -3,5 +3,6 @@ ingress:
   host: longhorn.kennyandries.com
   annotations:
     traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+
 defaultBackupStore:
   backupTarget: nfs://192.168.1.21:/mnt/hpool/backups/longhorn

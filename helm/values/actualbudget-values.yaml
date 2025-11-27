@@ -1,10 +1,3 @@
-strategy:
-  type: Recreate
-
-files:
-  server: /data/server-files
-  user: /data/user-files
-
 ingress:
   enabled: true
   hosts:
