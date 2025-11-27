@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+labels:
+  - includeSelectors: true
+    pairs:
+      app.kubernetes.io/managed-by: Kustomize
+resources:
+  - kube-vip/rbac.yaml
+  - kube-vip/daemonset.yaml
+  - cert-manager/clusterissuer.yaml
+  - cert-manager/sealedsecret.yaml
+  - longhorn/namespace.yaml
+  - traefik/sealedsecret.yaml
+  - traefik/middleware.yaml
+  - traefik/certificate.yaml
+  - servarr/namespace.yaml
+  - servarr/persistentvolume.yaml
+  - servarr/persistentvolumeclaim.yaml

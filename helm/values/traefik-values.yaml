@@ -1,0 +1,33 @@
+ports:
+  web:
+    redirections:
+      entryPoint:
+        to: websecure
+        scheme: https
+        permanent: true
+  websecure:
+    http3:
+      enabled: true
+
+ingressRoute:
+  dashboard:
+    enabled: true
+    matchRule: Host(`traefik.kennyandries.com`)
+    entryPoints:
+      - websecure
+    middlewares:
+      - name: oidc
+
+service:
+  externalIPs: ["192.168.1.3"]
+
+tlsStore:
+  default:
+    defaultCertificate:
+      secretName: traefik-cert
+
+experimental:
+  plugins:
+    traefik-oidc-auth:
+      moduleName: "github.com/sevensolutions/traefik-oidc-auth"
+      version: "v0.16.0"
