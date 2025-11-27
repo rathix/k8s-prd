@@ -11,6 +11,7 @@ metadata:
     gethomepage.dev/group: Cluster Management
     gethomepage.dev/icon: homepage.png
     gethomepage.dev/name: Homepage
+    gethomepage.dev/siteMonitor: http://homepage.homepage.svc.cluster.local:3000
     traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
 spec:
   rules:

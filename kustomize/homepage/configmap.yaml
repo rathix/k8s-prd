@@ -39,48 +39,63 @@ data:
           description: Media streaming
           namespace: servarr
           app: jellyfin
+          siteMonitor: http://servarr-jellyfin.servarr.svc.cluster.local:8096
       - Radarr:
           icon: radarr.png
           href: https://radarr.kennyandries.com/
           description: Movie requesting
           namespace: servarr
           app: radarr
+          siteMonitor: http://servarr-radarr.servarr.svc.cluster.local:7878
       - Sonarr:
           icon: sonarr.png
           href: https://sonarr.kennyandries.com/
           description: Series requesting
           namespace: servarr
           app: sonarr
+          siteMonitor: http://servarr-sonarr.servarr.svc.cluster.local:80
       - Lidarr:
           icon: lidarr.png
           href: https://lidarr.kennyandries.com/
           description: Music requesting
           namespace: servarr
           app: lidarr
+          siteMonitor: http://servarr-lidarr.servarr.svc.cluster.local:8686
       - Prowlarr:
           icon: prowlarr.png
           href: https://prowlarr.kennyandries.com/
           description: Indexer management
           namespace: servarr
           app: prowlarr
+          siteMonitor: http://servarr-prowlarr.servarr.svc.cluster.local:9696
       - Jellyseerr:
           icon: jellyseerr.png
           href: https://jellyseerr.kennyandries.com/
           description: Media requesting
           namespace: servarr
           app: jellyseerr
+          siteMonitor: http://servarr-jellyseerr.servarr.svc.cluster.local:5055
       - Bazarr:
           icon: bazarr.png
           href: https://bazarr.kennyandries.com/
           description: Subtitle management
           namespace: servarr
           app: bazarr
+          siteMonitor: http://servarr-bazarr.servarr.svc.cluster.local:6767
       - Cleanuparr:
           icon: cleanuperr.png
           href: https://cleanuparr.kennyandries.com/
           description: Media cleanup
           namespace: servarr
           app: cleanuparr
+          siteMonitor: http://servarr-cleanuparr.servarr.svc.cluster.local:11011
+      - qBittorrent:
+          icon: qbittorrent.png
+          href: https://qbittorrent.kennyandries.com/
+          description: Torrent client
+          namespace: servarr
+          app: qbittorrent
+          siteMonitor: http://servarr-qbittorrent-web.servarr.svc.cluster.local:8080
 
     - Services:
       - Actual Budget:
@@ -89,6 +104,7 @@ data:
           description: Personal finance
           namespace: actualbudget
           app: actualbudget
+          siteMonitor: http://actualbudget.actualbudget.svc.cluster.local:5006
 
     - Cluster Management:
       - Traefik:
@@ -97,12 +113,14 @@ data:
           description: Ingress controller
           namespace: traefik
           app: traefik
+          siteMonitor: https://traefik.kennyandries.com
       - Longhorn:
           icon: longhorn.png
           href: https://longhorn.kennyandries.com/
           description: Distributed block storage
           namespace: longhorn-system
           app: longhorn
+          siteMonitor: http://longhorn-frontend.longhorn-system.svc.cluster.local:80
 
   widgets.yaml: |
     - kubernetes:
