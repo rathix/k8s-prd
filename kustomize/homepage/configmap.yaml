@@ -25,12 +25,32 @@ data:
       Cluster Management:
         style: row
         columns: 4
+      TrueNAS:
+        style: row
+        columns: 4
+      Networking:
+        style: row
+        columns: 4
 
   bookmarks.yaml: |
-    - Developer:
-        - Github:
-            - abbr: GH
-              href: https://github.com/
+    - Development:
+      - Github:
+        - icon: github
+          href: https://github.com/
+    - Hetzner:
+      - konsoleH:
+        - icon: hetzner
+          href: https://konsoleh.hetzner.com/
+      - DNS Console:
+        - icon: hetzner
+          href: http://dns.hetzner.com/
+      - KH Webmail:
+        - icon: hetzner
+          href: https://webmail.your-server.de/
+      - Cloud Console:
+        - icon: hetzner
+          href: https://console.hetzner.com/
+
   services.yaml: |
     - Media:
       - Jellyfin:
@@ -121,6 +141,25 @@ data:
           namespace: longhorn-system
           app: longhorn
           siteMonitor: http://longhorn-frontend.longhorn-system.svc.cluster.local:80
+
+    - TrueNAS:
+      - pkb-nas-tns-1:
+          icon: truenas.png
+          href: https://pkb-nas-tns-1/
+          description: Network attached storage
+          siteMonitor: https://pkb-nas-tns-1
+      - plb-nas-tns-1:
+          icon: truenas.png
+          href: https://192.168.2.2/
+          description: Network attached storage
+          siteMonitor: https://192.168.2.2
+
+    - Networking:
+      - UniFi Express 7:
+          icon: unifi.png
+          href: https://192.168.1.1/
+          description: Router
+          siteMonitor: https://192.168.1.1
 
   widgets.yaml: |
     - kubernetes:

@@ -28,3 +28,8 @@ resources:
   - homepage/service.yaml
   - homepage/deployment.yaml
   - homepage/ingress.yaml
+  # Configarr
+  - configarr/pvc.yaml
+  - configarr/sealedsecret.yaml
+  - configarr/configmap.yaml
+  - configarr/cronjob.yaml
