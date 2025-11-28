@@ -29,6 +29,31 @@ spec:
           env:
             - name: HOMEPAGE_ALLOWED_HOSTS
               value: homepage.kennyandries.com # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
+            - name: HOMEPAGE_VAR_SONARR
+              valueFrom:
+                secretKeyRef:
+                  name: homepage-secret
+                  key: sonarrKey
+            - name: HOMEPAGE_VAR_RADARR
+              valueFrom:
+                secretKeyRef:
+                  name: homepage-secret
+                  key: radarrKey
+            - name: HOMEPAGE_VAR_LIDARR
+              valueFrom:
+                secretKeyRef:
+                  name: homepage-secret
+                  key: lidarrKey
+            - name: HOMEPAGE_VAR_PROWLARR
+              valueFrom:
+                secretKeyRef:
+                  name: homepage-secret
+                  key: prowlarrKey
+            - name: HOMEPAGE_VAR_JELLYFIN
+              valueFrom:
+                secretKeyRef:
+                  name: homepage-secret
+                  key: jellyfinKey
           ports:
             - name: http
               containerPort: 3000

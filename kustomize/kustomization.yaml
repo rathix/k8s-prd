@@ -24,6 +24,7 @@ resources:
   # Homepage Dashboard
   - homepage/namespace.yaml
   - homepage/rbac.yaml
+  - homepage/sealedsecret.yaml
   - homepage/configmap.yaml
   - homepage/service.yaml
   - homepage/deployment.yaml

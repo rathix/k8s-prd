@@ -35,21 +35,42 @@ data:
   bookmarks.yaml: |
     - Development:
       - Github:
-        - icon: github
+        - abbr: GH
           href: https://github.com/
     - Hetzner:
       - konsoleH:
-        - icon: hetzner
+        - abbr: KH
           href: https://konsoleh.hetzner.com/
       - DNS Console:
-        - icon: hetzner
+        - abbr: DC
           href: http://dns.hetzner.com/
       - KH Webmail:
-        - icon: hetzner
+        - abbr: KW
           href: https://webmail.your-server.de/
       - Cloud Console:
-        - icon: hetzner
+        - abbr: CC
           href: https://console.hetzner.com/
+    - Personal:
+      - Personal Website:
+        - abbr: KA
+          href: https://kennyandries.com/
+      - ProtonMail:
+        - abbr: PM
+          href: https://mail.proton.me/u/4/inbox
+    - Work:
+      - Company Website: 
+        - abbr: RC
+          href: https://rathix.be/
+      - Liantis:
+        - abbr: LI
+          href: https://app.liantis.be/myliantis/
+    - Shopping:
+      - Albert Heijn:
+        - abbr: AH
+          href: https://ah.be/
+      - Collect&Go:
+        - abbr: CG
+          href: https://collectandgo.be/colruyt/nl/home
 
   services.yaml: |
     - Media:
@@ -60,6 +81,16 @@ data:
           namespace: servarr
           app: jellyfin
           siteMonitor: http://servarr-jellyfin.servarr.svc.cluster.local:8096
+          widget:
+            type: jellyfin
+            url: http://servarr-jellyfin.servarr.svc.cluster.local:8096
+            key: {{HOMEPAGE_VAR_JELLYFIN}}
+            enableBlocks: true # optional, defaults to false
+            enableNowPlaying: true # optional, defaults to true
+            enableUser: true # optional, defaults to false
+            enableMediaControl: false # optional, defaults to true
+            showEpisodeNumber: true # optional, defaults to false
+            expandOneStreamToTwoRows: false # optional, defaults to true          
       - Radarr:
           icon: radarr.png
           href: https://radarr.kennyandries.com/
@@ -67,6 +98,11 @@ data:
           namespace: servarr
           app: radarr
           siteMonitor: http://servarr-radarr.servarr.svc.cluster.local:7878
+          widget:
+            type: radarr
+            url: http://servarr-radarr.servarr.svc.cluster.local:7878
+            key: {{HOMEPAGE_VAR_RADARR}}
+            enableQueue: true # optional, defaults to false
       - Sonarr:
           icon: sonarr.png
           href: https://sonarr.kennyandries.com/
@@ -74,6 +110,11 @@ data:
           namespace: servarr
           app: sonarr
           siteMonitor: http://servarr-sonarr.servarr.svc.cluster.local:80
+          widget:
+            type: sonarr
+            url: http://servarr-sonarr.servarr.svc.cluster.local:80
+            key: {{HOMEPAGE_VAR_SONARR}}
+            enableQueue: true # optional, defaults to false
       - Lidarr:
           icon: lidarr.png
           href: https://lidarr.kennyandries.com/
@@ -81,6 +122,11 @@ data:
           namespace: servarr
           app: lidarr
           siteMonitor: http://servarr-lidarr.servarr.svc.cluster.local:8686
+          widget:
+            type: lidarr
+            url: http://servarr-lidarr.servarr.svc.cluster.local:8686
+            key: {{HOMEPAGE_VAR_LIDARR}}
+            enableQueue: true # optional, defaults to false
       - Prowlarr:
           icon: prowlarr.png
           href: https://prowlarr.kennyandries.com/
@@ -88,6 +134,11 @@ data:
           namespace: servarr
           app: prowlarr
           siteMonitor: http://servarr-prowlarr.servarr.svc.cluster.local:9696
+          widget:
+            type: prowlarr
+            url: http://servarr-prowlarr.servarr.svc.cluster.local:9696
+            key: {{HOMEPAGE_VAR_PROWLARR}}
+            enableQueue: true # optional, defaults to false
       - Jellyseerr:
           icon: jellyseerr.png
           href: https://jellyseerr.kennyandries.com/
@@ -116,7 +167,11 @@ data:
           namespace: servarr
           app: qbittorrent
           siteMonitor: http://servarr-qbittorrent-web.servarr.svc.cluster.local:8080
-
+          widget:
+            type: qbittorrent
+            url: http://servarr-qbittorrent-web.servarr.svc.cluster.local:8080
+            enableLeechProgress: true # optional, defaults to false
+            enableLeechSize: true # optional, defaults to false
     - Services:
       - Actual Budget:
           icon: actual-budget.png
