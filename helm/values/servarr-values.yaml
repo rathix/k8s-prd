@@ -14,8 +14,8 @@ jellyfin:
 
   resources:
     limits:
-      memory: 2Gi
-      cpu: "1"
+      memory: 8Gi
+      cpu: "4"
     requests:
       memory: 256Mi
       cpu: "0.2"
