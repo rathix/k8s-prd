@@ -21,7 +21,6 @@ resources:
   - servarr/namespace.yaml
   - servarr/persistentvolume.yaml
   - servarr/persistentvolumeclaim.yaml
-  - servarr/sabnzbd.yaml
   # Homepage Dashboard
   - homepage/namespace.yaml
   - homepage/rbac.yaml
@@ -35,3 +34,8 @@ resources:
   - configarr/sealedsecret.yaml
   - configarr/configmap.yaml
   - configarr/cronjob.yaml
+  # SABnzbd
+  - sabnzbd/pvc.yaml
+  - sabnzbd/deployment.yaml
+  - sabnzbd/service.yaml
+  - sabnzbd/ingress.yaml

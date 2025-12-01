@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: servarr-sabnzbd
+  namespace: servarr
+  labels:
+    app.kubernetes.io/name: sabnzbd
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+spec:
+  rules:
+    - host: "sabnzbd.kennyandries.com"
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: servarr-sabnzbd
+                port:
+                  number: 8080
