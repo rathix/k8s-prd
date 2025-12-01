@@ -12,6 +12,14 @@ jellyfin:
       enabled: true
       existingClaim: servarr-jellyfin-media
 
+  resources:
+    limits:
+      memory: 2Gi
+      cpu: "1"
+    requests:
+      memory: 256Mi
+      cpu: "0.2"
+
 sonarr:
   enabled: true
   ingress:
@@ -27,6 +35,14 @@ sonarr:
   persistence:
     enabled: true
     existingClaim: servarr-sonarr
+
+  resources:
+    limits:
+      memory: 2Gi
+      cpu: "1"
+    requests:
+      memory: 256Mi
+      cpu: "0.2"
 
 qbittorrent:
   enabled: true
@@ -44,6 +60,14 @@ qbittorrent:
     enabled: true
     existingClaim: servarr-qbittorrent
 
+  resources:
+    limits:
+      memory: 2Gi
+      cpu: "1"
+    requests:
+      memory: 256Mi
+      cpu: "0.2"
+
 prowlarr:
   enabled: true
   ingress:
@@ -60,8 +84,16 @@ prowlarr:
     enabled: true
     existingClaim: servarr-prowlarr
 
+  resources:
+    limits:
+      memory: 2Gi
+      cpu: "1"
+    requests:
+      memory: 256Mi
+      cpu: "0.2"
+
 flaresolverr:
-  enabled: true
+  enabled: false
 
 jellyseerr:
   enabled: true
@@ -76,6 +108,14 @@ jellyseerr:
   persistence:
     enabled: true
     existingClaim: servarr-jellyseerr
+
+  resources:
+    limits:
+      memory: 2Gi
+      cpu: "1"
+    requests:
+      memory: 256Mi
+      cpu: "0.2"
 
 bazarr:
   enabled: true
@@ -93,6 +133,14 @@ bazarr:
     enabled: true
     existingClaim: servarr-bazarr
 
+  resources:
+    limits:
+      memory: 2Gi
+      cpu: "1"
+    requests:
+      memory: 256Mi
+      cpu: "0.2"
+
 radarr:
   enabled: true
   ingress:
@@ -108,6 +156,14 @@ radarr:
   persistence:
     enabled: true
     existingClaim: servarr-radarr
+
+  resources:
+    limits:
+      memory: 2Gi
+      cpu: "1"
+    requests:
+      memory: 256Mi
+      cpu: "0.2"
 
 lidarr:
   enabled: true
@@ -125,6 +181,14 @@ lidarr:
     enabled: true
     existingClaim: servarr-lidarr
 
+  resources:
+    limits:
+      memory: 2Gi
+      cpu: "1"
+    requests:
+      memory: 256Mi
+      cpu: "0.2"
+
 cleanuparr:
   enabled: true
   ingress:
@@ -140,3 +204,11 @@ cleanuparr:
   persistence:
     enabled: true
     existingClaim: servarr-cleanuparr
+
+  resources:
+    limits:
+      memory: 2Gi
+      cpu: "1"
+    requests:
+      memory: 256Mi
+      cpu: "0.2"
