@@ -240,6 +240,15 @@ data:
           href: https://192.168.1.1/
           description: Router
           siteMonitor: https://192.168.1.1
+      - Pi-Hole:
+          icon: pi-hole.png
+          href: https://pihole.kennyandries.com/admin/
+          description: DNS server
+          siteMonitor: http://pihole-web.pihole.svc.cluster.local
+          widget:
+            type: pihole
+            url: http://pihole-web.pihole.svc.cluster.local
+            version: 6 # required if running v6 or higher, defaults to 5
 
   widgets.yaml: |
     - kubernetes:
