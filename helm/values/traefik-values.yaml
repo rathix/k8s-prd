@@ -22,6 +22,8 @@ ingressRoute:
 
 service:
   externalIPs: ["192.168.1.3"]
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: traefik.kennyandries.com
 
 tlsStore:
   default:

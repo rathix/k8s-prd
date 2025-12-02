@@ -39,3 +39,13 @@ resources:
   - sabnzbd/deployment.yaml
   - sabnzbd/service.yaml
   - sabnzbd/ingress.yaml
+  # Pocket ID
+  - pocket-id/namespace.yaml
+  - pocket-id/pvc.yaml
+  - pocket-id/deployment.yaml
+  - pocket-id/service.yaml
+  - pocket-id/ingress.yaml
+  # External DNS
+  - external-dns/namespace.yaml
+  - external-dns/rbac.yaml
+  - external-dns/deployment.yaml

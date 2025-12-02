@@ -200,6 +200,11 @@ data:
           namespace: actualbudget
           app: actualbudget
           siteMonitor: http://actualbudget.actualbudget.svc.cluster.local:5006
+      - Pocket ID:
+          icon: pocket-id.png
+          href: https://auth.kennyandries.com/
+          description: Passkey IdP
+          siteMonitor: https://auth.kennyandries.com/
 
     - Cluster Management:
       - Traefik:

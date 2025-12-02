@@ -3,7 +3,8 @@ jellyfin:
   ingress:
     enabled: true
     hosts: ["jellyfin.kennyandries.com"]
-
+    annotations:
+      external-dns.alpha.kubernetes.io/target: traefik.kennyandries.com
   persistence:
     config:
       enabled: true
@@ -31,6 +32,7 @@ sonarr:
             pathType: ImplementationSpecific
     annotations:
       traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+      external-dns.alpha.kubernetes.io/target: traefik.kennyandries.com
 
   persistence:
     enabled: true
@@ -55,6 +57,7 @@ qbittorrent:
             pathType: ImplementationSpecific
     annotations:
       traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+      external-dns.alpha.kubernetes.io/target: traefik.kennyandries.com
 
   persistence:
     enabled: true
@@ -79,6 +82,7 @@ prowlarr:
             pathType: ImplementationSpecific
     annotations:
       traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+      external-dns.alpha.kubernetes.io/target: traefik.kennyandries.com
 
   persistence:
     enabled: true
@@ -104,6 +108,8 @@ jellyseerr:
         paths:
           - path: /
             pathType: ImplementationSpecific
+    annotations:
+      external-dns.alpha.kubernetes.io/target: traefik.kennyandries.com
 
   persistence:
     enabled: true
@@ -128,6 +134,7 @@ bazarr:
             pathType: ImplementationSpecific
     annotations:
       traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+      external-dns.alpha.kubernetes.io/target: traefik.kennyandries.com
 
   persistence:
     enabled: true
@@ -152,6 +159,7 @@ radarr:
             pathType: ImplementationSpecific
     annotations:
       traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+      external-dns.alpha.kubernetes.io/target: traefik.kennyandries.com
 
   persistence:
     enabled: true
@@ -176,6 +184,7 @@ lidarr:
             pathType: ImplementationSpecific
     annotations:
       traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+      external-dns.alpha.kubernetes.io/target: traefik.kennyandries.com
 
   persistence:
     enabled: true
@@ -200,6 +209,7 @@ cleanuparr:
             pathType: ImplementationSpecific
     annotations:
       traefik.ingress.kubernetes.io/router.middlewares: traefik-oidc@kubernetescrd
+      external-dns.alpha.kubernetes.io/target: traefik.kennyandries.com
 
   persistence:
     enabled: true

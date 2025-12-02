@@ -1,5 +1,7 @@
 ingress:
   enabled: true
+  annotations:
+    external-dns.alpha.kubernetes.io/target: traefik.kennyandries.com
   hosts:
     - host: actualbudget.kennyandries.com
       paths:

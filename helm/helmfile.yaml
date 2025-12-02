@@ -16,6 +16,8 @@ repositories:
     url: https://charts.kubito.dev
   - name: metrics-server
     url: https://kubernetes-sigs.github.io/metrics-server/
+  - name: mojo2600
+    url: https://mojo2600.github.io/pihole-kubernetes/
 
 releases:
   # Distributed storage
@@ -71,3 +73,10 @@ releases:
     version: v3.13.0
     values:
       - ./values/metrics-server-values.yaml
+  # DNS server
+  - name: pihole
+    namespace: pihole
+    chart: mojo2600/pihole
+    version: v2.34.0
+    values:
+      - ./values/pihole-values.yaml
