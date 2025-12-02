@@ -18,4 +18,8 @@ admin:
   enabled: false
 
 DNS1: 192.168.1.1
-DNS2: 9.9.9.9
+DNS2: 192.168.1.1
+
+dnsmasq:
+  customDnsEntries:
+    - address=/kube.kennyandries.com/192.168.1.3
