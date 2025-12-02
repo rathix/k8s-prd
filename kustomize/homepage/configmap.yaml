@@ -146,6 +146,10 @@ data:
           namespace: servarr
           app: jellyseerr
           siteMonitor: http://servarr-jellyseerr.servarr.svc.cluster.local:5055
+          widget:
+            type: jellyseerr
+            url: http://servarr-jellyseerr.servarr.svc.cluster.local:5055
+            key: {{HOMEPAGE_VAR_JELLYSEERR}}          
       - Bazarr:
           icon: bazarr.png
           href: https://bazarr.kennyandries.com/
@@ -153,6 +157,10 @@ data:
           namespace: servarr
           app: bazarr
           siteMonitor: http://servarr-bazarr.servarr.svc.cluster.local:6767
+          widget:
+            type: bazarr
+            url: http://servarr-bazarr.servarr.svc.cluster.local:6767
+            key: {{HOMEPAGE_VAR_BAZARR}}          
       - Cleanuparr:
           icon: cleanuperr.png
           href: https://cleanuparr.kennyandries.com/
@@ -172,6 +180,18 @@ data:
             url: http://servarr-qbittorrent-web.servarr.svc.cluster.local:8080
             enableLeechProgress: true # optional, defaults to false
             enableLeechSize: true # optional, defaults to false
+      - SABnzbd:
+          icon: sabnzbd.png
+          href: https://sabnzbd.kennyandries.com/
+          description: Usenet client
+          namespace: servarr
+          app: sabnzbd
+          siteMonitor: http://servarr-sabnzbd.servarr.svc.cluster.local:8080
+          widget:
+            type: sabnzbd
+            url: http://servarr-sabnzbd.servarr.svc.cluster.local:8080
+            key: {{HOMEPAGE_VAR_SABNZBD}}
+
     - Services:
       - Actual Budget:
           icon: actual-budget.png

@@ -61,6 +61,21 @@ spec:
                 secretKeyRef:
                   name: homepage-secret
                   key: jellyfinKey
+            - name: HOMEPAGE_VAR_SABNZBD
+              valueFrom:
+                secretKeyRef:
+                  name: homepage-secret
+                  key: sabnzbdKey
+            - name: HOMEPAGE_VAR_JELLYSEERR
+              valueFrom:
+                secretKeyRef:
+                  name: homepage-secret
+                  key: jellyseerrKey
+            - name: HOMEPAGE_VAR_BAZARR
+              valueFrom:
+                secretKeyRef:
+                  name: homepage-secret
+                  key: bazarrKey
           ports:
             - name: http
               containerPort: 3000
